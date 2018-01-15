@@ -21,14 +21,12 @@ Citizen.CreateThread(function()
 	local previous_entity = nil
 	while true do
 		Citizen.Wait(0)
-		if exports.core:GetGroup(GetPlayerServerId(PlayerId())) == "admin" or exports.core:GetGroup(GetPlayerServerId(PlayerId())) == "owner" or exports.core:GetGroup(GetPlayerServerId(PlayerId())) == "staff" then
-			if IsControlJustPressed(1, 10) and IsInputDisabled(2) then
-				isDebugPanelOpen = not isDebugPanelOpen
-				SendNUIMessage({display = isDebugPanelOpen})
-			end
-			if IsControlJustPressed(1, 11) and IsInputDisabled(2) and isDebugPanelOpen then
-				ShowCursor()
-			end
+		if IsControlJustPressed(1, 10) and IsInputDisabled(2) then
+			isDebugPanelOpen = not isDebugPanelOpen
+			SendNUIMessage({display = isDebugPanelOpen})
+		end
+		if IsControlJustPressed(1, 11) and IsInputDisabled(2) and isDebugPanelOpen then
+			ShowCursor()
 		end
 		if isDebugPanelOpen then
 			local player_pos = GetEntityCoords(PlayerPedId(), false)
