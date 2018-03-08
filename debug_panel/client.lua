@@ -51,9 +51,9 @@ Citizen.CreateThread(function()
 							previous_entity = entity
 						end
 					end
-					local entity_pos = GetEntityCoords(PlayerPedId(), false)
-					local entity_heading = GetEntityHeading(PlayerPedId())
-					local entity_rotation = GetEntityRotation(PlayerPedId())
+					local entity_pos = GetEntityCoords(entity, false)
+					local entity_heading = GetEntityHeading(entity)
+					local entity_rotation = GetEntityRotation(entity)
 					local entity_model = GetEntityModel(entity)
 					local entity_networked = boolToStr(NetworkHasControlOfEntity(entity))
 					local entity_controlled = boolToStr(NetworkRequestControlOfNetworkId(NetworkGetNetworkIdFromEntity(entity)))
